@@ -1,4 +1,5 @@
 #input for hours and payrate and calculate
+#If was not needed to finish assignment
 
 hrs = input("Enter Hours:")
 payRate = input("Enter Payrate:")
