@@ -13,14 +13,14 @@ grade = input("Please enter Score of Student between 0.0 and 1.0 : ")
 try:
     fltGrade = float(grade)
 except:
-    print("Please enter a numeric value between 0.0 and 1.0")
+    print("Bad Score")
     quit()
 
 gradeLetter = None
 
 #check if grade is bigger that 1.0 or less that 0.0
 if fltGrade > 1.0 or fltGrade < 0.0:
-    print("Please enter a numeric value between 0.0 and 1.0")
+    print("Bad Score")
 elif fltGrade >= 0.9:
     gradeLetter = "A"
 elif fltGrade >= 0.8:
@@ -32,5 +32,22 @@ elif fltGrade >= 0.6:
 else:
     gradeLetter = "F"
 
-print(gradeLetter)
+print("Grade:", gradeLetter)
 
+
+## Output
+
+# Please enter Score of Student between 0.0 and 1.0 : .95
+# Grade: A
+
+# Please enter Score of Student between 0.0 and 1.0 : perfect
+# Bad Score
+
+# Please enter Score of Student between 0.0 and 1.0 : 10.0
+# Bad Score
+
+# Please enter Score of Student between 0.0 and 1.0 : .75
+# Grade: C
+
+# Please enter Score of Student between 0.0 and 1.0 : .5
+# Grade: F
