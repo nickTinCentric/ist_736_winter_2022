@@ -34,6 +34,21 @@ else:
 
 print("Grade:", gradeLetter)
 
+def anyword():
+    print("anyword")
+
+anyword()
+
+
+
+# 00000000 = 0
+# 00000001 = 1
+# 00000010 = 2
+# 00000011 = 3
+# 00000100 = 4
+# 00000101 = 5
+#  - computer reads data 
+
 
 ## Output
 
