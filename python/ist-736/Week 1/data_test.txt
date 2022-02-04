@@ -1,0 +1,4 @@
+This is a test file for 
+reading in text via Python
+i am not sure how to use this yet
+but will soon know.
