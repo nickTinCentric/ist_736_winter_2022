@@ -1,12 +1,13 @@
 from azure.storage.blob import BlobServiceClient
 
 #connect_str = 'https://dlstorageaccountsyn.blob.core.windows.net/blob-ohe?sv=2020-02-10&st=2022-02-28T18%3A10%3A01Z&se=2022-03-05T18%3A10%3A00Z&sr=c&sp=racwlme&sig=88rUz%2FbXooL%2FwXHrNSGXlyWouPJBl4pcpv1X%2BSaRGWE%3D'
-connect_str = 'DefaultEndpointsProtocol=https;AccountName=dlstorageaccountsyn;AccountKey=a9+j2RFB9KPe9n80lyxFfAUHZnvSAE8wUa2wVG42lY2IjafiRb5UyFwTCJZFjhaxlNev/3CzT0yD2PDywJqtjw==;EndpointSuffix=core.windows.net'
+connect_str = 'DefaultEndpointsProtocol=https;AccountName=dlstorageaccountsyn;AccountKey='
 blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 container_client=blob_service_client.get_container_client('blob-ohe')
 blobs = container_client.list_blobs( )
 for blob in blobs:
     print(blob.name)
-    doc = open(blob.name)
-    for word in doc:
-        print(word)
+
+
+# Failed
+# Traceback (most recent call last):  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1293, in _deserialize    found_value = key_extractor(attr, attr_desc, data)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1114, in xml_key_extractor    xml_name = xml_desc['name']KeyError: 'name'During handling of the above exception, another exception occurred:Traceback (most recent call last):  File "C:\Temp\luer5bk2.haq\2302c654-4c7a-41a8-947e-fa913a2063fa", line 10, in <module>    for blob in blobs:  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\azure\core\paging.py", line 129, in __next__    return next(self._page_iterator)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\azure\core\paging.py", line 76, in __next__    self._response = self._get_next(self.continuation_token)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\azure\storage\blob\_list_blobs_helper.py", line 72, in _get_next_cb    return self._command(  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\azure\storage\blob\_generated\operations\_container_operations.py", line 1473, in list_blob_flat_segment    deserialized = self._deserialize('ListBlobsFlatSegmentResponse', pipeline_response)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1233, in __call__    return self._deserialize(target_obj, data)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1303, in _deserialize    raise_with_traceback(DeserializationError, msg, err)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\exceptions.py", line 51, in raise_with_traceback    raise error.with_traceback(exc_traceback)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1293, in _deserialize    found_value = key_extractor(attr, attr_desc, data)  File "C:\WPy64-3800\python-3.8.0.amd64\lib\site-packages\msrest\serialization.py", line 1114, in xml_key_extractor    xml_name = xml_desc['name']msrest.exceptions.DeserializationError: Unable to deserialize to object: type, KeyError: 'name'
