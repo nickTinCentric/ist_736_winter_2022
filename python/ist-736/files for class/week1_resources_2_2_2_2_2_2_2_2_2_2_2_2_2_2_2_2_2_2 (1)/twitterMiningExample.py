@@ -38,10 +38,11 @@ from wordcloud import WordCloud, STOPWORDS
 ## Create all the keys and secrets that you get
 ## from using the Twitter API-------------------------------------
 ## Go To developer.twitter.com and create an account
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_secret = ''
+
+consumer_key = 'f3CCEMivim3yaXzvCqkyqpuuL'
+consumer_secret = 'OSiWHLMW3mzNdun72WXY0oyiFALM3cHC4clOUYqVWs8cnZrOfC'
+access_token = '2688563125-U3FuewnpZkibYMzcDOBas09U7p3Fhvx7LlIECZm'
+access_secret = '74NqZTMa4mhcXrkphpIUGX9gIa8Vfb61dMvCm9DKhZsTv'
  
 auth = OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
